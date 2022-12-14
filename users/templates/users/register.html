@@ -2,7 +2,6 @@
 {% block content %}
 <form method="post"> {% csrf_token %}
     {{form.as_p}}
-    <input type="submit" value="Login">
+    <input type="submit" value="Register">
 </form>
-<h3><a href="/user/register/">Don't have an account? Register now!</a></h3>
 {% endblock content %}
