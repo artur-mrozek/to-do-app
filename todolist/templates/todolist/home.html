@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 {% for task in tasks %}
-<div><p>{{ task.title }} {{ task.description }}  {{ task.done }}</p></div>
+<div><p>{{ task.title }} {{ task.description }}  {{ task.done }} <a href="{{ task.get_absolute_url }}">Edit</a></p></div>
 {% endfor %}
 <a href="/create/">Create new task</a>
 {% endblock content %}
