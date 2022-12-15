@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+<a href="/user/logout">Log out</a>
 {% for task in tasks %}
 <div><p>{{ task.title }} {{ task.description }}  {{ task.done }} <a href="{{ task.get_absolute_url }}">Edit</a> <a href="{{ task.get_absolute_url }}/delete">Delete</a></p></div>
 {% endfor %}

@@ -6,6 +6,8 @@ from .forms import TaskForm
 
 # Create your views here.
 def home_view(request, *args, **kwargs):
+    if not request.user.is_authenticated:
+        return redirect("/user/login")
     queryset = Task.objects.all().filter(owner=request.user)
     context = {"tasks": queryset}
     return render(request, "todolist/home.html", context)
