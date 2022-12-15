@@ -27,3 +27,11 @@ def update_task_view(request, pk, *args, **kwargs):
             return redirect("/")
     context = {"form": form}
     return render(request, "todolist/create_task.html", context)
+
+def delete_task_view(request, pk, *args, **kwargs):
+    obj = get_object_or_404(Task, id=pk)
+    if request.method == "POST":
+        obj.delete()
+        return redirect("/")
+    context = {"obj": obj}
+    return render(request, "todolist/delete_task.html", context)
