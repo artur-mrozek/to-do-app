@@ -13,6 +13,8 @@ def home_view(request, *args, **kwargs):
     return render(request, "todolist/home.html", context)
 
 def create_task_view(request, *args, **kwargs):
+    if not request.user.is_authenticated:
+        return redirect("/user/login")
     form = TaskForm(request.POST or None)
     if form.is_valid():
             t = Task(owner=request.user, title=request.POST["title"], description=request.POST["description"], done=request.POST.get("done") == "on")
@@ -22,6 +24,8 @@ def create_task_view(request, *args, **kwargs):
     return render(request, "todolist/create_task.html", context)
 
 def update_task_view(request, pk, *args, **kwargs):
+    if not request.user.is_authenticated:
+        return redirect("/user/login")
     obj = get_object_or_404(Task, id=pk)
     if obj.owner != request.user:
         return redirect ("/")
@@ -33,6 +37,8 @@ def update_task_view(request, pk, *args, **kwargs):
     return render(request, "todolist/edit_task.html", context)
 
 def delete_task_view(request, pk, *args, **kwargs):
+    if not request.user.is_authenticated:
+        return redirect("/user/login")
     obj = get_object_or_404(Task, id=pk)
     if obj.owner != request.user:
         return redirect ("/")
