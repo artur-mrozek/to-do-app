@@ -3,21 +3,22 @@
 {% block content %}
 <button class="logout_button"><a href="/user/logout">Log out</a></button>
 <div class="container">
-    <button class="task_create"><a href="/create/">Create new task</a></button>
 {% for task in tasks %}
-<p class="task">
-    <span class="task_title">{{ task.title }}</span> 
-    <span class="task_desc">{{ task.description }}</span>  
-    <span class="task_done">
+<div class="task">
+    <div class="task_title">{{ task.title }}</div> 
+    <div class="task_desc">{{ task.description }}</div>  
+    <div class="task_done">
         {% if task.done %}
         <img src={% static 'check.png' %} width=25 height=25>
         {% else %}
         <img src={% static 'uncheck.png' %} width=25 height=25>
         {% endif %}
-    </span> 
+    
     <button class="task_edit"><a href="{{ task.get_absolute_url }}">Edit</a></button>
     <button  class="task_delete"><a href="{{ task.get_absolute_url }}/delete">Delete</a></button>
-</p>
+    </div>
+</div>
 {% endfor %}
+<button class="task_create"><a href="/create/">Create new task</a></button>
 </div>
 {% endblock content %}

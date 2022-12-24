@@ -6,9 +6,19 @@ a {
   text-decoration: none;
 }
 .container{
-
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
 }
 .task {
+  width: 1000px;
+
+  border-radius: 25px;
+  border: 2px solid blue;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .task_title {
   font-weight: bold;
