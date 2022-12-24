@@ -33,6 +33,7 @@ def register_view(request, *args, **kwargs):
         if form.is_valid():
             user = User.objects.create_user(request.POST['username'], request.POST['email'], request.POST['password'])
             user.save()
+            login(request, user)
             return redirect('/')
     context = {"form": form}
     return render(request, "users/register.html", context)
