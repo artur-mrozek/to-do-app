@@ -23,6 +23,8 @@ def create_task_view(request, *args, **kwargs):
 
 def update_task_view(request, pk, *args, **kwargs):
     obj = get_object_or_404(Task, id=pk)
+    if obj.owner != request.user:
+        return redirect ("/")
     form = TaskForm(request.POST or None, instance=obj)
     if form.is_valid():
             form.save()
@@ -32,6 +34,8 @@ def update_task_view(request, pk, *args, **kwargs):
 
 def delete_task_view(request, pk, *args, **kwargs):
     obj = get_object_or_404(Task, id=pk)
+    if obj.owner != request.user:
+        return redirect ("/")
     if request.method == "POST":
         obj.delete()
         return redirect("/")
