@@ -13,11 +13,11 @@
         {% else %}
         <img src={% static 'uncheck.png' %} width=27 height=27>
         {% endif %}
-    <button class="task_edit"><a href="{{ task.get_absolute_url }}">Edit</a></button>
-    <button  class="task_delete"><a href="{{ task.get_absolute_url }}/delete">Delete</a></button>
+    <button class="task_edit" onclick="location.href='{{ task.get_absolute_url }}'">Edit</button>
+    <button  class="task_delete" onclick="location.href='{{ task.get_absolute_url }}/delete'">Delete</button>
     </div>
 </div>
 {% endfor %}
-<button class="task_create"><a href="/create/">Create new task</a></button>
+<button class="task_create" onclick="location.href='/create/'">Create new task</button>
 </div>
 {% endblock content %}
