@@ -24,6 +24,10 @@ body {
   float: right;
 }
 
+a{
+  text-decoration: none;
+  color: white;
+}
 
 .form-container{
   border-radius: 25px;
