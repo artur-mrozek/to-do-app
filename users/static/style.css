@@ -1,0 +1,107 @@
+body {
+  font-family: verdana;
+}
+.container{
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+}
+.task {
+  width: 1000px;
+
+  border-radius: 20px;
+  border: 2px solid blue;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.task_title {
+  font-weight: bold;
+}
+.logout_button {
+  float: right;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.form-container{
+  border-radius: 25px;
+  border: 2px solid blue;
+  border-radius: 10px;
+  padding: 10px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=email], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: blue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: rgb(1, 1, 163);
+}
+
+button {
+  background-color: blue;
+  color: white;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(1, 1, 163);
+}
+
+img {
+  vertical-align: middle;
+}
+
+.task_desc {
+  margin-bottom: 1px;
+}
